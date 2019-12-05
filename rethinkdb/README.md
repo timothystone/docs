@@ -16,7 +16,9 @@ WARNING:
 
 # Supported tags and respective `Dockerfile` links
 
--	[`2.3.7`, `2.3`, `2`, `latest`](https://github.com/rethinkdb/rethinkdb-dockerfiles/blob/6efa057f145112f259949ce5b37a3bd6384eb5c5/bionic/2.3.7/Dockerfile)
+**WARNING:** THIS IMAGE *IS NOT SUPPORTED* ON THE `s390x` ARCHITECTURE
+
+[![s390x/rethinkdb build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/s390x/job/rethinkdb.svg?label=s390x/rethinkdb%20%20build%20job)](https://doi-janky.infosiftr.net/job/multiarch/job/s390x/job/rethinkdb/)
 
 # Quick reference
 
@@ -56,7 +58,7 @@ RethinkDB is an open-source, distributed database built to store JSON documents 
 The default CMD of the image is `rethinkdb --bind all`, so the RethinkDB daemon will bind to all network interfaces available to the container (by default, RethinkDB only accepts connections from `localhost`).
 
 ```bash
-docker run --name some-rethink -v "$PWD:/data" -d rethinkdb
+docker run --name some-rethink -v "$PWD:/data" -d s390x/rethinkdb
 ```
 
 ## Connect the instance to an application
